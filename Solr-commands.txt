@@ -1,0 +1,17 @@
+curl https://admin:admin@bltv0005.bhdc.att.com:8984/solr/emr/update?commit=true -H "Content-Type: text/xml" --data-binary @0209-060.xml
+
+curl http://localhost:8985/solr/SolrDemo/update?commit=true -H "Content-Type: %1" --data-binary @"%2"
+"D:\rs00353729\TECHM\POC\Solr Search\SampleNode\records1.json"
+
+
+curl "http://localhost:8983/solr/admin/cores?action=RELOAD&core=SolrDemo"
+curl http://localhost:8983/solr/demo/update?commit=true -H "Content-Type: text/json" --data-binary 
+
+java -Dtype="text/xml" -Durl=http://localhost:8983/solr/demo/update -jar D:\rs00353729\TECHM\Utilities\solr-6.1.0\solr-6.1.0\example\exampledocs\post.jar
+
+curl http://localhost:8983/solr/demo/update?commit=true -H "Content-Type: text/xml" --data-binary '<delete><query>*:*</query></delete>'
+
+http://localhost:8983/solr/demo/update?stream.body=:&commit=true
+
+date +"%m-%H-%M"
+curl https://admin:admin@bltv0005.bhdc.att.com:8984
